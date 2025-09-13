@@ -2,9 +2,14 @@ package com.demo.kotlin_dsa_practice.basic_question_arr
 
 fun main() {
     val arr = intArrayOf(5, 4, 3, 2, 1)
-    var reversedArr = reverseArrOptimize(arr)
-    println(reversedArr.contentToString())
+//    var reversedArr = reverseArrOptimize(arr)
+//    println(reversedArr.contentToString())
+
+    var strArr = charArrayOf('h', 'e', 'l', 'l', 'o')
+    var reversedStrArr = reverseArr(strArr)
+    println(reversedStrArr)
 }
+
 
 /*
 Complexity
@@ -12,12 +17,18 @@ Time: O(n) → single loop through the array.
 Space: O(n) → because you created a new list of size n
  */
 
-fun reverseArr(arr: IntArray): IntArray {
-    var listArr = mutableListOf<Int>()
-    for (i in arr.size - 1 downTo 0) {
-        listArr.add(arr[i])
+fun reverseArr(arr: CharArray): CharArray {
+    var right = arr.size - 1
+    var left = 0
+    while (left < right) {
+        val temp = arr[right]
+        arr[right] = arr[left]
+        arr[left] = temp
+        right--
+        left++
     }
-    return listArr.toIntArray()
+
+    return arr
 }
 
 /*
