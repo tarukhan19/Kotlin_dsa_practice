@@ -1,5 +1,24 @@
 package com.demo.kotlin_dsa_practice.string_question
 
+/*
+Subsequence
+
+A subsequence of a string is formed by deleting zero or more characters from the string without
+changing the relative order of the remaining characters.
+Example:
+String = "abcde"
+Subsequences include:
+
+"abcde" (the whole string)
+
+"ace" (deleted b and d)
+
+"bd" (deleted a, c, e)
+
+"" (empty string is always a subsequence)
+
+👉 Key: Order is preserved, but characters don’t need to be consecutive.
+ */
 fun main() {
     var s = "abck"
     var t = "ahbgdc"

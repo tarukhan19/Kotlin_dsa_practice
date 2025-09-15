@@ -1,8 +1,8 @@
 package com.demo.kotlin_dsa_practice.string_question
 
 fun main() {
-    var needle = "sad"
-    var haystack = "lsadutad"
+    var needle = "cdeab"
+    var haystack = "abcdeabcde"
     var index = findNeedle(needle, haystack)
     println(index)
 }
@@ -29,16 +29,4 @@ fun findNeedle(needle: String, haystack: String): Int {
     return -1
 }
 
-fun isSubsequence(needle: String, haystack: String): Boolean {
-    var i = 0
-    var j = 0
-    while (i < needle.length && j < haystack.length) {
-        if (needle[i] == haystack[j]) {
-            i++
-        }
-        j++
-    }
-    return i == needle.length
-}
-
-
+/// this is how we solve substring question
