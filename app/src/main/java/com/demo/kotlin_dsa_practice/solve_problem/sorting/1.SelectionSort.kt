@@ -8,7 +8,7 @@ fun main() {
 }
 
 /*
-1) select minimum element
+1) find minimum element
 2) swap it
 
 time complexity =O(n^2)

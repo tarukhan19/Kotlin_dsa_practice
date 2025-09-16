@@ -2,7 +2,7 @@ package com.demo.kotlin_dsa_practice.solve_problem.array.easy
 
 fun main() {
     var numArr = intArrayOf(0, 1, 0, 3, 12)
-    val arr = moveZeroesBruteForce(numArr)
+    val arr = moveZeroes(numArr)
     println(arr.contentToString())
 }
 

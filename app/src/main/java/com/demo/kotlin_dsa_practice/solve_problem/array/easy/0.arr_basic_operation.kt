@@ -6,7 +6,7 @@ O(n) + O(n) + O(n) → O(n)
 
 Space Complexity:
 In-place operations → O(1)
- */
+*/
 fun main() {
     var numArr = intArrayOf(1, 2, 2, 1, 1, 0)
     val arr = applyOperation(numArr)
@@ -21,7 +21,7 @@ fun applyOperation(arr: IntArray): IntArray {
             arr[i + 1] = 0
         }
     }
-
+    println(arr.contentToString())
     for (i in 0 until arr.size) {
 
         if (arr[i] != 0) {
@@ -29,10 +29,9 @@ fun applyOperation(arr: IntArray): IntArray {
             k++
         }
     }
-
+    println(arr.contentToString())
     for (j in k until arr.size) {
         arr[j] = 0
     }
-
     return arr
 }

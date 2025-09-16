@@ -7,9 +7,6 @@ fun main() {
     println(newArr.contentToString())
 }
 
-// 7654 321
-// 4567 123
-
 fun rotateArrLeft(arr: IntArray, k: Int): IntArray {
     var count = k
     while (count != 0) {
