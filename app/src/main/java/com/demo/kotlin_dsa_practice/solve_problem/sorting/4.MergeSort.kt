@@ -83,4 +83,8 @@ Average = O(n log n)
 Worst = O(n log n)
 
 Space Complexity: O(n) (for temp array + recursion stack).
+
+“Merge Sort always runs in O(n log n) time in best, average, and worst cases,
+because it divides the array into halves recursively and merges them in linear time.
+Its space complexity is O(n), since we need an auxiliary array to hold elements while merging, plus O(log n) for recursion stack.”
 */
