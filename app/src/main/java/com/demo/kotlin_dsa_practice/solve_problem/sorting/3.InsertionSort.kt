@@ -1,8 +1,8 @@
 package com.demo.kotlin_dsa_practice.solve_problem.sorting
 
 fun main() {
-    var arr = intArrayOf(1, 14, 3, 16, 8, 12)
-    var sortedArr = insertionSort(arr)
+    var arr = intArrayOf(4, 5, 2, 1, 3)
+    var sortedArr = recursiveInsertionSort(arr, arr.size, 1)
     println(sortedArr.contentToString())
 }
 
@@ -51,7 +51,7 @@ Space: O(1)
  */
 
 fun insertionSort(arr: IntArray): IntArray {
-    for (i in 0 until arr.size) {
+    for (i in 1 until arr.size) {
         var j = i
         while (j > 0 && arr[j - 1] > arr[j]) {
             var temp = arr[j - 1]
@@ -82,4 +82,33 @@ Average case: O(n²)
 Worst case: O(n²)
 
 Space Complexity = O(1)
+ */
+
+fun recursiveInsertionSort(arr: IntArray, n: Int, i: Int): IntArray {
+    if (n == i) {
+        return arr
+    }
+    var j = i
+    while (j > 0 && arr[j - 1] > arr[j]) {
+        var temp = arr[j]
+        arr[j] = arr[j - 1]
+        arr[j - 1] = temp
+        j--
+    }
+
+    return recursiveInsertionSort(arr, n, i + 1)
+}
+
+/*
+Outer recursion (i from 0 to n-1): Runs n times.
+Inner while loop: In the worst case (array sorted in descending order), each i may shift all the way to index 0.
+That means ~1 + 2 + 3 + … + (n-1) = n(n-1)/2 =n^2
+
+Time Complexity:
+
+Best: O(n)
+Average: O(n^2)
+Worst: O(n^2)
+
+Space Complexity:O(n) (due to recursion stack)
  */
