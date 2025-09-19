@@ -25,6 +25,9 @@ fun findUnion(arr1: IntArray, arr2: IntArray): IntArray {
 }
 
 /*
+Optimal Approach => Two Pointer
+output = 1,2,3,4,5,6
+
 Time complexity = O(n+m)
 Space complexity = O(n+m)
 
