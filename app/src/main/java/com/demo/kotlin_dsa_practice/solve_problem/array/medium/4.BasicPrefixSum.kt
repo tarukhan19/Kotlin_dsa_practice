@@ -1,5 +1,8 @@
 package com.demo.kotlin_dsa_practice.solve_problem.array.medium
 
+/*
+https://www.youtube.com/watch?v=KDH4mhFVvHw
+ */
 fun main() {
     var arr = intArrayOf(-1, 2, 3, -5)
     var leftIndex = intArrayOf(0, 1)

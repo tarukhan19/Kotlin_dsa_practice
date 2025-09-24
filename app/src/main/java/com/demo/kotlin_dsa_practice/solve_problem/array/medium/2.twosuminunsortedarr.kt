@@ -46,7 +46,7 @@ Only a fixed-size array (intArrayOf(i, j)) is returned → constant space.
 */
 
 fun main() {
-    bruteForceApproach()
+    hashMapApproach()
 }
 
 fun bruteForceApproach(): IntArray? {

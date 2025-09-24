@@ -1,13 +1,13 @@
 package com.demo.kotlin_dsa_practice.solve_problem.array.medium
 
 /*
-The majority element is the element that appears more than ⌊n / 2⌋ times.
-You may assume that the majority element always exists in the array.
+
+Moore's voting algorithm
 
  */
 fun main() {
     var numArr = intArrayOf(2)
-    val majorityElm = majorityElement(numArr)
+    val majorityElm = optimizeMajorityElement(numArr)
     println(majorityElm)
 }
 
@@ -61,17 +61,32 @@ fun optimizeMajorityElement(numArr: IntArray): Int {
     }
 
     for (i in 0 until numArr.size) {
-        if (count == 0) {
-            majorityElem = numArr[i]
+        when{
+            count == 0 -> {
+                majorityElem = numArr[i]
+                count = 1
+            }
+            majorityElem == numArr[i] -> {
+                count++
+            }
+            else -> {
+                count--
+            }
         }
-
-        if (majorityElem == numArr[i]) {
-            count++
-        } else {
-            count--
-        }
-
     }
 
     return majorityElem
 }
+
+
+
+//        if (count == 0) {
+//            majorityElem = numArr[i]
+//        }
+//
+//        if (majorityElem == numArr[i]) {
+//            count++
+//        } else {
+//            count--
+//        }
+
