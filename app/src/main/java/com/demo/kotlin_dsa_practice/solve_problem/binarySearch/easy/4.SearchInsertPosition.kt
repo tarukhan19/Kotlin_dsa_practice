@@ -10,7 +10,6 @@ fun main() {
 fun searchInsertPosition(arr: IntArray, target: Int): Int {
     var left = 0
     var right = arr.size - 1
-
     var index = arr.size
 
     while (left <= right) {

@@ -1,8 +1,8 @@
 package com.demo.kotlin_dsa_practice.solve_problem.string.easy
 
 fun main() {
-    var str = "First leTTeR of EACH Word"
-    var convertCase = convertFirstChar(str)
+    var str = "hello,world. THIS is-a test"
+    var convertCase = convertFirstCase(str)
     println(convertCase)
 }
 
@@ -82,4 +82,47 @@ fun convertFirstChar(str: String): String {
         }
         result.toString()
     }
+}
+
+fun convertFirstCase(str: String): String {
+    var result = StringBuilder()
+    var isWord = false
+
+    for (ch in str) {
+
+        if (ch == ' ' || ch == ',' || ch == '.' || ch == ';' || ch == '-') {
+            isWord = false
+            result.append(ch)
+        } else {
+            if (!isWord) {
+
+                isWord = true
+                var ascii = ch.code
+
+                when {
+                    ascii in 97..122 -> {
+                        result.append((ascii - 32).toChar())
+                    }
+
+                    else -> {
+                        result.append(ascii.toChar())
+                    }
+                }
+            } else {
+                var ascii = ch.code
+
+                when {
+                    ascii in 65..90 -> {
+                        result.append((ascii + 32).toChar())
+                    }
+
+                    else -> {
+                        result.append(ascii.toChar())
+                    }
+                }
+            }
+
+        }
+    }
+    return result.toString()
 }
