@@ -1,8 +1,9 @@
 package com.demo.kotlin_dsa_practice.solve_problem.string.easy
 
 fun main() {
-    var str = " a   good "
-    var result = reverseWordsInPlace(str)
+    var str = "  hello world  "
+
+    var result = reverseWords2(str)
     println(result)
 }
 
@@ -45,45 +46,91 @@ fun reverseString(str: String): String {
 Time	O(n)
 Space	O(1)
  */
-fun reverseWordsInPlace(s: String): String {
+
+// it will not remove the extra space
+fun reverseWords1(s: String): String {
     val arr = s.toCharArray()
-    val n = arr.size
 
     // Step 1: Reverse the whole array
-    reverse(arr, 0, n)
+    reverse(arr, 0, arr.size - 1)
 
-    var write = 0
-    var read = 0
+    var i = 0
+    while (i < arr.size) {
 
-    while (read < n) {
-        if (arr[read] != ' ') {
-            val startWrite = write
-
-            // Copy word to write position
-            while (read < n && arr[read] != ' ') {
-                arr[write++] = arr[read++]
-            }
-
-            // Reverse the word
-            reverse(arr, startWrite, write)
-
-            // Skip spaces in read
-            while (read < n && arr[read] == ' ') read++
-
-            // Add single space if more words ahead
-            if (read < n) arr[write++] = ' '
-        } else {
-            read++
+        while (i < arr.size && arr[i] == ' ') {
+            i++
         }
-    }
+        if (i >= arr.size) break
 
+        var start = i
+        while (i < arr.size && arr[i] != ' ') {
+            i++
+        }
+        var end = i - 1
+
+        // Reverse the word
+        reverse(arr, start, end)
+    }
+    return String(arr)
+}
+
+/*
+Time	O(n)
+Space	O(1)
+
+// it will remove the extra space
+
+ */
+
+fun reverseWords2(s: String): String {
+    val arr = s.toCharArray()
+
+    // Reverse the whole array
+    reverse(arr, 0, arr.size - 1)
+
+    var i = 0
+    var write = 0
+
+    while (i < arr.size) {
+
+        while (i < arr.size && arr[i] == ' ') {
+            i++
+        }
+        if (i >= arr.size) break
+
+        var start = i
+        while (i < arr.size && arr[i] != ' ') {
+            i++
+        }
+        var end = i - 1
+
+        // Reverse the word
+        reverse(arr, start, end)
+
+        // Copy word to write pointer
+        for (j in start..end) {
+            arr[write] = arr[j]
+            write++
+        }
+        // Skip extra spaces
+        while (i < arr.size && arr[i] == ' ') i++
+
+        // Add single space if more words ahead
+        if (i < arr.size) {
+            arr[write] = ' '
+            write++
+        }
+
+
+    }
     return String(arr, 0, write)
 }
+
 
 // Reverse a section [start, end)
 fun reverse(arr: CharArray, start: Int, end: Int) {
     var i = start
-    var j = end - 1
+    var j = end
     while (i < j) {
         val temp = arr[i]
         arr[i] = arr[j]
@@ -92,6 +139,4 @@ fun reverse(arr: CharArray, start: Int, end: Int) {
         j--
     }
 }
-
-
 
