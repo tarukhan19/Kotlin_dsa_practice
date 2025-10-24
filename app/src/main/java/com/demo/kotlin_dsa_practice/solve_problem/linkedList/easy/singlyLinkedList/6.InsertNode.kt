@@ -1,4 +1,4 @@
-package com.demo.kotlin_dsa_practice.solve_problem.linkedList.easy
+package com.demo.kotlin_dsa_practice.solve_problem.linkedList.easy.singlyLinkedList
 
 import com.demo.kotlin_dsa_practice.solve_problem.linkedList.Node
 
