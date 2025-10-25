@@ -1,7 +1,5 @@
 package com.demo.kotlin_dsa_practice.solve_problem.linkedList.easy.singlyLinkedList
 
-import com.demo.kotlin_dsa_practice.solve_problem.linkedList.Node
-
 /*
 Linked List is a linear data structure that can be visualized as a chain with different nodes connected,
 where each node represents a different element. The difference between arrays and linked lists is that,

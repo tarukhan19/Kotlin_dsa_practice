@@ -1,7 +1,5 @@
 package com.demo.kotlin_dsa_practice.solve_problem.linkedList.easy.singlyLinkedList
 
-import com.demo.kotlin_dsa_practice.solve_problem.linkedList.Node
-
 /*
 https://www.youtube.com/watch?v=VaECK03Dz-g&t=928s
  */

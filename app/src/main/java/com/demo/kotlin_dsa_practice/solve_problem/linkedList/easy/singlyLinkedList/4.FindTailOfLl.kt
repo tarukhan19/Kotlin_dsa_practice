@@ -1,7 +1,5 @@
 package com.demo.kotlin_dsa_practice.solve_problem.linkedList.easy.singlyLinkedList
 
-import com.demo.kotlin_dsa_practice.solve_problem.linkedList.Node
-
 fun main() {
     var arr = intArrayOf(2, 3, 4, 5, 7)
     var node = convertArrToLL(arr)

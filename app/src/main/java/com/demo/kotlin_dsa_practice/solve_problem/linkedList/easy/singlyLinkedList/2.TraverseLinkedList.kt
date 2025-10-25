@@ -1,7 +1,5 @@
 package com.demo.kotlin_dsa_practice.solve_problem.linkedList.easy.singlyLinkedList
 
-import com.demo.kotlin_dsa_practice.solve_problem.linkedList.Node
-
 fun main() {
     var arr = intArrayOf(3, 2, 5, 6, 7)
     var head = convert(arr)
