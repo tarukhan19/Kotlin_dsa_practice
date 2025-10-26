@@ -2,7 +2,7 @@ package com.demo.kotlin_dsa_practice.solve_problem.array.easy
 
 fun main() {
     var arr = intArrayOf(0, 1, 2, 4, 3, 5, 7)
-    var number = findMissingNumber(arr)
+    var number = findMissingNumberOptimize(arr)
     println(number)
 }
 
@@ -29,12 +29,12 @@ fun findMissingNumber(arr: IntArray): Int {
 
 fun findMissingNumberOptimize(arr: IntArray): Int {
     var n = arr.size
-    var size = n * (n + 1) / 2 //10
-    var numSize = 0
+    var expectedSum = (n * (n + 1)) / 2
+    var actualSum = 0
     for (i in 0 until arr.size) {
-        numSize = numSize + arr[i]
+        actualSum = actualSum + arr[i]
     }
 
-    var diff = size - numSize
+    var diff = expectedSum - actualSum
     return diff
 }
