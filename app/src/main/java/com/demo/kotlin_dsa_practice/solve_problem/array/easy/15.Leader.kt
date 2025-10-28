@@ -1,6 +1,6 @@
 package com.demo.kotlin_dsa_practice.solve_problem.array.easy
 
-import kotlin.math.max
+// A leader in an array is a number that is greater than all the elements to its right in the array.
 
 fun main() {
     val arr = intArrayOf(10, 22, 12, 3, 0, 6)
