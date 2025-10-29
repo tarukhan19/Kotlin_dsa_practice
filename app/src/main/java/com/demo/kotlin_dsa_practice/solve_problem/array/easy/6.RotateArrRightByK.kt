@@ -4,10 +4,13 @@ fun main() {
     var arr = intArrayOf(-1, -100, 3, 99)
     var k = 2
 
-    val steps = k % arr.size
-    rotateArrOptimize1(arr, arr.size - 1, 0, arr.size)
-    rotateArrOptimize1(arr, steps - 1, 0, steps)
-    rotateArrOptimize1(arr, arr.size - 1, steps, arr.size)
+    val step = k % arr.size
+
+    rotate(arr, 0, arr.size - 1)
+    rotate(arr, 0, step - 1)
+    rotate(arr, step, arr.size - 1)
+
+    println(arr.contentToString())
 
 }
 
@@ -82,17 +85,17 @@ fun rotateArrOptimize(arr: IntArray, k: Int): IntArray {
     return arr
 }
 
-fun rotateArrOptimize1(arr: IntArray, pointer: Int, left: Int, right: Int): IntArray {
-    var p = pointer
-    for (i in left until right) {
-        if (p > i) {
-            var temp = arr[p]
-            arr[p] = arr[i]
-            arr[i] = temp
-            p--
-        } else break
+fun rotate(arr: IntArray, left: Int, right: Int): IntArray {
+    var i = left
+    var j = right
+
+    while (i < j) {
+        var tem = arr[i]
+        arr[i] = arr[j]
+        arr[j] = tem
+        i++
+        j--
     }
-    println(arr.contentToString())
 
     return arr
 }

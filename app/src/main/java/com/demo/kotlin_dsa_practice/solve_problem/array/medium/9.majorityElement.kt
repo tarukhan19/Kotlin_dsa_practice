@@ -79,15 +79,3 @@ fun optimizeMajorityElement(numArr: IntArray): Int {
 
     return majorityElem
 }
-
-
-//        if (count == 0) {
-//            majorityElem = numArr[i]
-//        }
-//
-//        if (majorityElem == numArr[i]) {
-//            count++
-//        } else {
-//            count--
-//        }
-
