@@ -1,8 +1,10 @@
 package com.demo.kotlin_dsa_practice.solve_problem.array.medium
 
+import kotlin.math.max
+
 fun main() {
     var numArr = intArrayOf(7,1,5,3,6,4)
-    val diff = buySellStock(numArr)
+    val diff = buySellStock2(numArr)
     println("difference ----> $diff")
 }
 
@@ -55,12 +57,16 @@ fun buySellStockOptimize(numArr: IntArray): Int {
 }
 
 fun buySellStock2(arr: IntArray): Int {
-    var maxProfit = 0
+   var bestBuy = arr[0]
+   var profit = 0
 
-    for (i in 1 until arr.size) {
-        if (arr[i] > arr[i-1]) {
-            maxProfit += arr[i] - arr[i-1]
-        }
-    }
-    return maxProfit
+   for (i in 1 until arr.size) {
+       if(arr[i] > bestBuy) {
+           profit = maxOf(profit , (arr[i] - bestBuy))
+       }
+
+       bestBuy = minOf(bestBuy , arr[i])
+   }
+
+    return profit
 }

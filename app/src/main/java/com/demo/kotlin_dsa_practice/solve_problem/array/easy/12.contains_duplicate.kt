@@ -1,7 +1,9 @@
 package com.demo.kotlin_dsa_practice.solve_problem.array.easy
 
 fun main() {
-    val isDuplicate = checkDuplicate()
+    val arr = intArrayOf(1, 3, 4, 2, 2)
+
+    val isDuplicate = findDuplicate(arr)
     println(isDuplicate)
 }
 
@@ -31,4 +33,17 @@ fun isDuplicate(): Boolean {
         }
     }
     return false
+}
+
+fun findDuplicate(arr: IntArray): Int {
+    var tempArr = IntArray(arr.size)
+
+    arr.forEach {
+        if (tempArr[it] > 0) {
+            return it
+        } else {
+            tempArr[it]++
+        }
+    }
+    return -1
 }
